@@ -1,13 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: black;
+  color: white; /* Makes the text white */
 }
+
+h1, h2, h3, p {
+  color: white; /* Ensures all text is white */
+}
+
+a {
+  color: orange; /* Keeps the links in orange */
+}
+
+button {
+  background-color: orange; /* Orange background for buttons */
+  color: white; /* White text on buttons */
+}
+
+section {
+  background-color: black; /* Keep sections with black background */
+  color: white; /* Text in white for each section */
+}
+
+
