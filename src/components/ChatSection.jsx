@@ -1,51 +1,28 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 
-const ChatSection = () => {
+const FinalCTA = () => {
   return (
     <motion.section
-      id="chat"
-      style={{ backgroundColor: '#1a1a1a', padding: '50px 0' }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="bg-black text-white py-20 px-4"
     >
-      <div style={{ textAlign: 'center' }}>
-        <motion.h2
-          style={{ color: 'orange' }}
-          initial={{ y: -30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          Let’s Chat
-        </motion.h2>
-        <motion.p
-          style={{ color: 'white' }}
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          Have questions? Let’s discuss how we can work together.
-        </motion.p>
-        <motion.a
-          href="mailto:youremail@example.com"
-          style={{
-            backgroundColor: 'orange',
-            color: 'white',
-            padding: '10px 20px',
-            textDecoration: 'none',
-            borderRadius: '5px',
-            display: 'inline-block',
-            marginTop: '20px',
-          }}
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          Schedule a Call
-        </motion.a>
+      <div className="max-w-5xl mx-auto text-center mb-16">
+      <div className="h-1 bg-[#ff6a00] w-20 mx-auto mb-12"></div>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-[#ff6a00]">
+          You Know How to Build a Business. Let’s Build the Body That Matches.
+        </h2>
+        <p className="text-lg mb-8">I only work with a handful of clients each month to give you my full focus.</p>
+        <p className="text-lg mb-8">Let’s hop on a quick call, understand your goals, and build a plan around your lifestyle. No pressure. Just possibilities.</p>
+        <button className="mt-6 px-8 py-4 bg-orange-500 text-black font-semibold rounded-full hover:bg-orange-400 transition-all animate-bounce">
+        Book Your Free Strategy Call
+                </button>
       </div>
     </motion.section>
   );
 };
 
-export default ChatSection;
+export default FinalCTA;

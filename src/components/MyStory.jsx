@@ -3,43 +3,63 @@ import { motion } from 'framer-motion';
 
 const MyStory = () => {
   return (
-    <section className="bg-black text-orange-500 py-24 px-4">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="relative bg-gradient-to-br from-black via-[#0d0d0d] to-black text-[#ff6a00] py-20 px-4 overflow-hidden"
+    >
+      {/* Blurred Background Logo */}
+      <div className="h-1 bg-[#ff6a00] w-20 mx-auto mb-12"></div>
+      <div className="absolute inset-0 flex justify-center items-center opacity-5">
+        <img src="/images/bg-logo.png" alt="Background Logo" className="w-[70%] blur-3xl" />
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         {/* Animated Image */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
           className="text-center md:text-left"
         >
-          <img
-            src="/images/bg-logo.png"
-            alt="My Story"
-            className="rounded-xl w-full max-w-sm mx-auto md:mx-0"
-          />
+          <div className="p-2 rounded-3xl bg-gradient-to-tr from-[#ff6a00] to-[#ff4500] shadow-2xl">
+            <img
+              src="/images/bg-logo.png" 
+              alt="Vaibhav Story"
+              className="rounded-2xl w-full max-w-sm mx-auto md:mx-0 bg-black p-4"
+            />
+          </div>
         </motion.div>
 
-        {/* Animated Text */}
+        {/* Text Content */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">My Story</h2>
-          <p className="mb-4 text-lg leading-relaxed text-orange-400">
-            I wasn’t always in shape. In fact, just a few years ago, I was stuck in a cycle of bad habits, low energy, and poor health.
-          </p>
-          <p className="mb-4 text-lg leading-relaxed text-orange-400">
-            Through relentless effort, mentorship, and a systems-based approach to fitness — I transformed not just my body, but my mindset and life.
-          </p>
-          <p className="text-lg leading-relaxed text-orange-400">
-            Now, I help others unlock that same transformation — especially high performers who demand more from themselves in every area of life.
-          </p>
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-8 leading-tight bg-gradient-to-r from-[#ff6a00] to-[#ff4500] bg-clip-text text-transparent">
+            From Athlete to Coach for High Performers
+          </h2>
+          <div className="space-y-6 text-orange-400 text-lg leading-relaxed">
+            <p>
+              I’m Vaibhav — a professional-level tennis player turned performance coach.
+            </p>
+            <p>
+              With half a decade of experience in fitness and nutrition, I help ambitious people reclaim their
+              energy, build lean muscle, and finally feel in control of their health.
+            </p>
+            <p>
+              From my engineering background to my years on the court, discipline and results have always
+              defined me. Now, I bring that same science and structure to people like you — so your body stops slowing you down.
+            </p>
+          </div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,56 +1,72 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const testimonials = [
   {
-    name: 'John Doe',
-    quote:
-      'This program completely changed my life. I feel stronger, more confident, and more focused than ever before.',
-    image: '/images/user1.jpg',
+    image: '/images/Testimonial1.jpeg',
+    quote: 'Dropped 10kg in 12 weeks — and still closed the biggest deal of my life.',
+    name: 'Arjun',
+    // title: 'SaaS Founder',
   },
   {
-    name: 'Sarah Lee',
-    quote:
-      'The systems-based approach is next-level. I saw visible results in just a few weeks!',
-    image: '/images/user2.jpg',
+    image: '/images/Testimonial2.jpeg',
+    quote: 'The most energy I’ve had in years. I feel like I’m 10 years younger.',
+    name: 'Raghav',
+    // title: 'VC Executive',
   },
   {
-    name: 'Mark Johnson',
-    quote:
-      'I’ve never had this much energy while managing work and training. Best decision I made this year.',
-    image: '/images/user3.jpg',
+    image: '/images/Testimonial3.jpeg',
+    quote: 'Didn’t think I could get in shape without sacrificing work. I was wrong.',
+    name: 'John',
+    // title: 'Fintech CEO',
   },
 ];
 
-const RealResults = () => {
-  return (
-    <section className="bg-black text-orange-500 py-24 px-4">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-12">Real Results</h2>
+const Testimonials = () => {
+  const [current, setCurrent] = useState(0);
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-[#0d0d0d] p-6 rounded-xl border border-orange-500 shadow-lg hover:scale-105 hover:shadow-orange-500/40 transition-transform duration-300"
-            >
-              <img
-                src={testimonial.image}
-                alt={testimonial.name}
-                className="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-2 border-orange-500"
-              />
-              <h3 className="text-xl font-semibold mb-2">{testimonial.name}</h3>
-              <p className="text-orange-400 text-sm">{testimonial.quote}</p>
-            </motion.div>
-          ))}
-        </div>
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="bg-black text-white py-20 px-4">
+      <div className="max-w-5xl mx-auto text-center mb-16">
+        <div className="h-1 bg-[#ff6a00] w-20 mx-auto mb-6"></div>
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#ff6a00] mb-6">
+          Real Results
+        </h2>
+      </div>
+
+      <div className="relative w-full overflow-hidden max-w-xl mx-auto">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col items-center space-y-6"
+          >
+            <img
+              src={testimonials[current].image}
+              alt={testimonials[current].name}
+              className="rounded-xl border-2 border-[#ff6a00] w-80 h-80 object-cover" 
+            />
+            <p className="italic max-w-md text-center px-4">
+              "{testimonials[current].quote}"
+            </p>
+            <div className="text-orange-400 font-semibold">{testimonials[current].name}</div>
+            <div className="text-sm">{testimonials[current].title}</div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );
 };
 
-export default RealResults;
+export default Testimonials;
