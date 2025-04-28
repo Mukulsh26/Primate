@@ -26,7 +26,7 @@ const WhoIWorkWith = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-[#0d0d0d] text-[#ff6a00] py-20 px-4 text-center relative overflow-hidden"
+      className="bg-[#0d0d0d] text-[#ff6a00] py-16 px-4 text-center relative overflow-hidden"
     >
       {/* Background Logo Blur */}
       <div className="absolute inset-0 flex justify-center items-center opacity-5">
@@ -44,16 +44,17 @@ const WhoIWorkWith = () => {
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {clients.map((client, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="p-6 bg-black rounded-xl border border-[#ff6a00] hover:bg-[#ff6a00] hover:text-black transition-all duration-300"
-            >
-              <h3 className="text-xl font-semibold mb-3">{client.title}</h3>
-              <p className="text-white">{client.description}</p>
-            </motion.div>
+            key={index}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="p-6 bg-black text-[#ff6a00] rounded-xl border border-[#ff6a00] hover:shadow-[0_0_20px_#fff] transition-all duration-300"
+          >
+            <h3 className="text-xl font-semibold mb-3">{client.title}</h3>
+            <p className="text-white">{client.description}</p>
+          </motion.div>
+          
           ))}
         </div>
       </div>

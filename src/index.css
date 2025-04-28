@@ -8,25 +8,25 @@ body {
 
 body {
   background-color: black;
-  color: white; /* Makes the text white */
+  color: white; 
 }
 
 h1, h2, h3, p {
-  color: white; /* Ensures all text is white */
+  color: white; 
 }
 
 a {
-  color: orange; /* Keeps the links in orange */
+  color: orange; 
 }
 
 button {
-  background-color: orange; /* Orange background for buttons */
-  color: white; /* White text on buttons */
+  background-color: orange; 
+  color: white; 
 }
 
 section {
-  background-color: black; /* Keep sections with black background */
-  color: white; /* Text in white for each section */
+  background-color: black; 
+  color: white; 
 }
 
 

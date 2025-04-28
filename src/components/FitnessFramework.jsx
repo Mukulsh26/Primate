@@ -23,7 +23,7 @@ const HighPerformerFramework = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-black text-[#ff6a00] py-20 px-4"
+      className="bg-black text-[#ff6a00] py-16 px-4"
     >
       <div className="h-1 bg-[#ff6a00] w-20 mx-auto mb-12"></div>
       <div className="max-w-5xl mx-auto text-center mb-16">
@@ -31,7 +31,7 @@ const HighPerformerFramework = () => {
           Fitness That Works Like You Do —
         </h2>
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-          <span className="text-[#ff6a00]">Efficient, Strategic, Powerful</span>
+          <span className="text-orange-400">Efficient, Strategic, Powerful</span>
         </h2>
         <p className="text-orange-400 max-w-3xl mx-auto text-lg">
           No fluff. No complexity. Just a system that fits you — and actually gets results.
@@ -40,17 +40,18 @@ const HighPerformerFramework = () => {
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
         {features.map((feature, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, rotateY: 90 }}
-            whileInView={{ opacity: 1, rotateY: 0 }}
-            transition={{ duration: 0.7, delay: index * 0.2 }}
-            viewport={{ once: true }}
-            className="bg-[#0d0d0d] border border-[#ff6a00] p-8 rounded-2xl hover:bg-[#ff6a00] hover:text-black transition duration-300 shadow-lg"
-          >
-            <h3 className="text-2xl font-semibold mb-4">{feature.title}</h3>
-            <p className="text-orange-300">{feature.description}</p>
-          </motion.div>
+         <motion.div
+         key={index}
+         initial={{ opacity: 0, rotateY: 90 }}
+         whileInView={{ opacity: 1, rotateY: 0 }}
+         transition={{ duration: 0.7, delay: index * 0.2 }}
+         viewport={{ once: true }}
+         className="bg-[#0d0d0d] border border-[#ff6a00] p-8 rounded-2xl hover:shadow-[0_0_20px_#fff] transition-all duration-300 shadow-lg"
+       >
+         <h3 className="text-2xl font-semibold mb-4">{feature.title}</h3>
+         <p className="text-orange-300">{feature.description}</p>
+       </motion.div>
+       
         ))}
       </div>
     </motion.section>

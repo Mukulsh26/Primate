@@ -34,11 +34,11 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="bg-black text-white py-20 px-4">
+    <section className="bg-black text-white py-16 px-4">
       <div className="max-w-5xl mx-auto text-center mb-16">
         <div className="h-1 bg-[#ff6a00] w-20 mx-auto mb-6"></div>
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#ff6a00] mb-6">
-          Real Results
+        <h2 className="text-3xl sm:text-4xl font-bold text-orange-400 mb-6">
+          Testimonials
         </h2>
       </div>
 

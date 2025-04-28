@@ -8,12 +8,12 @@ const MyStory = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="relative bg-gradient-to-br from-black via-[#0d0d0d] to-black text-[#ff6a00] py-20 px-4 overflow-hidden"
+      className="relative bg-gradient-to-br from-black via-[#1a1a1a] to-black text-[#ff6a00] py-16 px-4 overflow-hidden"
     >
       {/* Blurred Background Logo */}
       <div className="h-1 bg-[#ff6a00] w-20 mx-auto mb-12"></div>
       <div className="absolute inset-0 flex justify-center items-center opacity-5">
-        <img src="/images/bg-logo.png" alt="Background Logo" className="w-[70%] blur-3xl" />
+        <img src="/images/Owner.jpeg" alt="Background Logo" className="w-[70%] blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -25,13 +25,11 @@ const MyStory = () => {
           viewport={{ once: true }}
           className="text-center md:text-left"
         >
-          <div className="p-2 rounded-3xl bg-gradient-to-tr from-[#ff6a00] to-[#ff4500] shadow-2xl">
             <img
-              src="/images/bg-logo.png" 
+              src="/images/Owner.jpeg" 
               alt="Vaibhav Story"
-              className="rounded-2xl w-full max-w-sm mx-auto md:mx-0 bg-black p-4"
+              className="rounded-2xl w-full max-w-sm mx-auto md:mx-0 bg-black p-4 border-4 border-gray-500"
             />
-          </div>
         </motion.div>
 
         {/* Text Content */}
@@ -41,7 +39,7 @@ const MyStory = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl font-extrabold mb-8 leading-tight bg-gradient-to-r from-[#ff6a00] to-[#ff4500] bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-8 text-orange-400">
             From Athlete to Coach for High Performers
           </h2>
           <div className="space-y-6 text-orange-400 text-lg leading-relaxed">

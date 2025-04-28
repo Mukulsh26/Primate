@@ -27,15 +27,16 @@ const ProgramBreakdown = () => {
       <div className="max-w-5xl mx-auto grid gap-6">
         {features.map((feature, index) => (
           <motion.div
-            key={index}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="bg-black border border-[#ff6a00] rounded-xl p-6 text-left hover:bg-[#ff6a00] hover:text-black transition duration-300"
-          >
-            <p className="text-lg">{feature}</p>
-          </motion.div>
+          key={index}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="bg-black border border-[#ff6a00] rounded-xl p-6 text-left hover:shadow-[0_0_20px_#fff] transition-all duration-300"
+        >
+          <p className="text-lg">{feature}</p>
+        </motion.div>
+        
         ))}
       </div>
 

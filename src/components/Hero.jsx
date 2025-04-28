@@ -21,17 +21,19 @@ const Hero = () => {
                     In Less Than 12 Weeks — With My Science-Backed Online Fitness Program
                 </p>
 
-                <p className="text-md md:text-lg text-orange-400 mb-10 animate-fade-in-up delay-200">
+                <p className="text-md md:text-lg text-white mb-10 animate-fade-in-up delay-200">
                     No more burnout. No more guesswork. Just a tailored plan that fits your calendar — and delivers real results.
                 </p>
 
-                <p className="text-md md:text-lg text-orange-400 mb-10 animate-fade-in-up delay-400">
+                <p className="text-md md:text-lg text-white mb-10 animate-fade-in-up delay-400">
                     Let’s make your health your best business decision yet.
                 </p>
 
-                <button className="mt-6 px-8 py-4 bg-orange-500 text-black font-semibold rounded-full hover:bg-orange-400 transition-all animate-bounce">
-                    Let’s Chat Over a Virtual Coffee
-                </button>
+                <button className="mt-6 px-8 py-4 border-2 border-orange-500 bg-black text-orange-500 font-semibold rounded-full transition-all animate-bounce">
+    Let’s Chat Over a Virtual Coffee
+</button>
+
+
             </div>
         </section>
     );
