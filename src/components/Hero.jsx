@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
     return (
-        <section className="bg-black text-orange-500 min-h-screen flex flex-col justify-center items-center px-4 text-center relative overflow-hidden">
+        <section className="bg-black text-orange-500 min-h-screen flex flex-col justify-center items-center px-4 text-center relative overflow-hidden pt-11">
             <div className="absolute inset-0 flex justify-center items-center">
                 <img
                     src="/images/bg-logo.png"
