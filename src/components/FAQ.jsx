@@ -29,6 +29,7 @@ const FAQs = () => {
 
   return (
     <section className="bg-black text-orange-500 py-20 px-4">
+      <div className="h-1 bg-[#ff6a00] w-20 mx-auto mb-12"></div>
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
         <div className="space-y-6">
