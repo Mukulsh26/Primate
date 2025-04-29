@@ -11,7 +11,7 @@ const AboutPrimate = () => {
       className="bg-[#0d0d0d] text-[#ff6a00] py-24 px-4 text-center"
     >
       <div className="h-1 bg-[#ff6a00] w-20 mx-auto mb-12"></div>
-      <h2 className="text-3xl sm:text-4xl font-bold mb-8">About PRIMATE</h2>
+      <h2 className="text-3xl sm:text-4xl font-bold font-peckham-press mb-8">About PRIMATE</h2>
 
       <div className="max-w-4xl mx-auto text-orange-300 text-lg space-y-6">
         <motion.p

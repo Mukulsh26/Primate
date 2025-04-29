@@ -10,17 +10,18 @@ const Navbar = () => {
       transition={{ duration: 0.6 }}
       className="bg-[#0d0d0d] flex items-center justify-between px-6 py-4 fixed w-full z-50 shadow-md backdrop-blur-md"
     >
-      
-      <div className="flex items-center">
-        <img 
-          src="/images/logo.png" 
-          alt="PRIMATE Logo"
-          className="h-16 w-auto"
-        />
-        <div className="ml-4 text-white text-2xl font-bold font-peckham-press">
-          PRIMATE
-        </div>
-      </div>
+
+<div className="flex items-center">
+  <img 
+    src="/images/logo.png" 
+    alt="PRIMATE Logo"
+    className="h-12 w-auto sm:h-16"
+  />
+  <div className="ml-2 text-white text-2xl md:text-2xl font-bold font-peckham-press hidden sm:block">
+    PRIMATE
+  </div>
+</div>
+
 
       <a
         href="#lets-chat"
