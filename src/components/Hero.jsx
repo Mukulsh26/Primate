@@ -45,7 +45,7 @@ const Hero = () => {
            <motion.button
             animate={{ y: [0, -9, 0] }}
             transition={{
-              delay: 2.6, // float starts after boom ends
+              delay: 2.6, 
               repeat: Infinity,
               repeatType: 'loop',
               duration: 1.2,

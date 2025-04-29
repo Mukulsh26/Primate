@@ -10,7 +10,7 @@ const Navbar = () => {
       transition={{ duration: 0.6 }}
       className="bg-[#0d0d0d] flex items-center justify-between px-6 py-4 fixed w-full z-50 shadow-md backdrop-blur-md"
     >
-      {/* Logo Image and PRIMATE Text */}
+      
       <div className="flex items-center">
         <img 
           src="/images/logo.png" 

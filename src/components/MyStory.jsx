@@ -10,14 +10,14 @@ const MyStory = () => {
       transition={{ duration: 0.8 }}
       className="relative bg-gradient-to-br from-black via-[#1a1a1a] to-black text-[#ff6a00] py-16 px-4 overflow-hidden"
     >
-      {/* Blurred Background Logo */}
+     
       <div className="h-1 bg-[#ff6a00] w-20 mx-auto mb-12"></div>
       <div className="absolute inset-0 flex justify-center items-center opacity-5">
         <img src="/images/Owner.jpeg" alt="Background Logo" className="w-[70%] blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        {/* Animated Image */}
+        
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -32,7 +32,7 @@ const MyStory = () => {
             />
         </motion.div>
 
-        {/* Text Content */}
+        
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
