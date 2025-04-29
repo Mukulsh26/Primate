@@ -28,7 +28,7 @@ const MyStory = () => {
             <img
               src="/images/Owner.jpeg" 
               alt="Vaibhav Story"
-              className="rounded-2xl w-full max-w-sm mx-auto md:mx-0 bg-black p-4 border-4 border-gray-500"
+              className="rounded-2xl w-full max-w-lg mx-auto md:mx-0 bg-black p-4 border-4 border-gray-500"
             />
         </motion.div>
 
