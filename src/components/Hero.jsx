@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Hero = () => {
+const Hero = ({ openModal }) => {
   return (
     <section className="bg-black text-orange-500 min-h-screen flex flex-col justify-center items-center px-4 text-center relative overflow-hidden pt-24">
       <div className="absolute inset-0 flex justify-center items-center">
@@ -51,9 +51,12 @@ const Hero = () => {
               duration: 1.2,
               ease: 'easeInOut',
             }}
-            className="mt-6 px-8 py-4 border-2 border-orange-500 bg-black text-orange-500 font-semibold rounded-full shadow-lg"
-          >
-            LET'S CHAT OVER A COFFEE.
+            className="mt-6 px-8 py-4 border-2 border-orange-500 bg-black text-orange-500 font-semibold rounded-full shadow-lg"  onClick={(e) => {
+              e.preventDefault(); 
+              openModal(); 
+            }}
+          > 
+            LET'S CHAT OVER A VIRTUAL COFFEE
           </motion.button>
         </motion.div>
       </div>
