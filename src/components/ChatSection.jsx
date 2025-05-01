@@ -23,11 +23,11 @@ const FinalCTA = () => {
       <div className="relative z-10 max-w-5xl mx-auto text-center mb-16 mt-10">
         <div className="h-1 bg-[#ff6a00] w-20 mx-auto mb-12"></div>
         <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-orange-400">
-          I only work with a handful of clients each month to give you my full focus.
+          I only work with a handful of clients each month <br /> to give you my full focus
         </h2>
         <p className="text-lg mb-8">
           Let’s hop on a quick call, understand your goals, and build a plan around your lifestyle.
-          No pressure. Just possibilities.
+          No pressure, Just possibilities.
         </p>
 
         <motion.div

@@ -15,7 +15,7 @@ const Hero = ({ openModal }) => {
       <div className="relative z-10 max-w-4xl">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-8 animate-fade-in-down">
           You just came a step closer<br />
-          to being in the <span className='text-orange-400'>Best Shape</span> of your life.
+          to being in the <span className='text-orange-400'>Best Shape</span> of your life
         </h1>
 
         <p className="text-lg md:text-xl text-white mb-8 animate-fade-in-up">
