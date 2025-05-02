@@ -1,8 +1,31 @@
 import React from 'react';
+import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
 
 const Modal = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
+  const formRef = useRef();
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      'service_ocy2tck',
+      'template_mu5n9fp',
+      formRef.current,
+      'ISOW2oEIfgwoZdrFN'
+    )
+    .then(() => {
+      alert('Message sent successfully!');
+      onClose();
+    })
+    .catch((error) => {
+      console.error('EmailJS error:', error);
+      alert('Failed to send message. Please try again.');
+    });
+  }
+
+
+  if (!isOpen) return null;
   return (
     <div
       className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50"
@@ -24,7 +47,7 @@ const Modal = ({ isOpen, onClose }) => {
           Book Your Free 1-on-1 Fitness Strategy Call
         </h2>
         <hr className="border-t-2 border-[#ff6a00] mb-6" />
-        <form>
+        <form ref={formRef} onSubmit={sendEmail}>
           <div className="mb-5">
             <label htmlFor="fullName" className="block text-lg font-medium text-gray-300">
               Full Name (required)
