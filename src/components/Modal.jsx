@@ -1,12 +1,16 @@
 import React from 'react';
 import emailjs from '@emailjs/browser';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const Modal = ({ isOpen, onClose }) => {
   const formRef = useRef();
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setLoading(true);
 
     emailjs.sendForm(
       'service_ocy2tck',
@@ -15,14 +19,19 @@ const Modal = ({ isOpen, onClose }) => {
       'ISOW2oEIfgwoZdrFN'
     )
     .then(() => {
-      alert('Message sent successfully!');
-      onClose();
+      setLoading(false);
+      setSuccessMessage('✅ We will contact you soon.');
+      setTimeout(() => {
+        setSuccessMessage('');
+        onClose();
+      }, 3000);
     })
     .catch((error) => {
       console.error('EmailJS error:', error);
-      alert('Failed to send message. Please try again.');
-    });
-  }
+      setLoading(false);
+      setErrorMessage('❌ There was an issue sending your message. Please try again.');
+    });    
+  };
 
 
   if (!isOpen) return null;
@@ -47,6 +56,12 @@ const Modal = ({ isOpen, onClose }) => {
           Book Your Free 1-on-1 Fitness Strategy Call
         </h2>
         <hr className="border-t-2 border-[#ff6a00] mb-6" />
+
+        {successMessage ? (
+          <p className="text-center text-green-400 text-lg font-medium">{successMessage}</p>
+        ) : errorMessage ? (
+          <p className="text-center text-red-400 text-lg font-medium mb-4">{errorMessage}</p>
+        ) : (
         <form ref={formRef} onSubmit={sendEmail}>
           <div className="mb-5">
             <label htmlFor="fullName" className="block text-lg font-medium text-gray-300">
@@ -163,14 +178,36 @@ const Modal = ({ isOpen, onClose }) => {
           </div>
 
           <div className="text-center mt-6">
-            <button
-              type="submit"
-              className="w-full py-4 bg-gradient-to-br from-[#ff6a00] to-[#ff8800] text-white rounded-xl hover:scale-105 transition-all duration-300"
-            >
-              Submit
-            </button>
+              {loading ? (
+                <div className="flex justify-center items-center">
+                  <svg className="animate-spin h-6 w-6 text-[#ff6a00]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    />
+                  </svg>
+                  <span className="ml-2 text-[#ff6a00] font-medium">Sending...</span>
+                </div>
+              ) : (
+                <button
+                  type="submit"
+                  className="w-full py-4 bg-gradient-to-br from-[#ff6a00] to-[#ff8800] text-white rounded-xl hover:scale-105 transition-all duration-300"
+                >
+                  Submit
+                </button>
+              )}
           </div>
         </form>
+         )}
       </div>
     </div>
   );
