@@ -44,7 +44,7 @@ const MyStory = () => {
           </h2>
           <div className="space-y-6 text-orange-400 text-lg leading-relaxed">
             <p>
-              I’m Vaibhav — a professional-level tennis player turned performance coach.
+              I’m Vaibhav — a professional tennis player turned performance coach.
             </p>
             <p>
               With half a decade of experience in fitness and nutrition, I help ambitious people reclaim their
